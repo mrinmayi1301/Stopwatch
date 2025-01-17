@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.main-cont{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    border: 5px solid rgb(129, 125, 125);
+    border-radius: 50%;
+    position: relative;
+}
+.container::after{
+content: "";
+position: absolute;
+top: 0%; /* start from the top */
+left: 50%;
+width: 3px;
+height: 150px;
+transform-origin: center bottom;
+background-color: goldenrod;
+transition: transform 1s linear;
+}
+
+
+@keyframes  spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.container.spin::after {
+    animation: spin 60s linear infinite;
+    animation-play-state: running; /* Make sure the animation is running */
+}
+
+
+.container.pause::after {
+    animation-play-state: paused;  /* Pause the animation */
+}
+
+
+.box{
+    width: 120px;
+    height: 65px;
+    color: white;
+    margin-bottom: 50px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+.sub-cont{
+    width: 350px;
+    display: flex;
+   justify-content: space-between;
+}
+
+.btn{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}
+
+.disp{
+    width: 300px;
+    border-bottom: 1px solid rgb(96, 94, 94);
+    color: white;
+    font-size: 20px;
+}
+
+#stopBtn{
+    display: none;
+    background-color: rgba(255, 0, 0, 0.214);
+    color: red;
+}
+
+#resetBtn{
+    display: none;
+    background-color: rgba(128, 128, 128, 0.288);
+    color: rgb(196, 193, 193);
+}
+
+#startBtn{
+    background-color: rgba(0, 128, 0, 0.288);
+    color: rgb(53, 246, 0);
+}
+
+#lapBtn{
+background-color: rgba(128, 128, 128, 0.288);
+color: rgb(135, 135, 135);
+}
